@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transport Oxygen Duration Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form>
+                Tank Type (Constant)
+                <select name="cylType" class="custom-select">
+                    <option value="D">D (0.16)</option>
+                    <option value="E">E (.028)</option>
+                    <option value="G">G (2.41)</option>
+                    <option value="H">H (3.14)</option>
+                    <option value="K">K (3.14)</option>
+                    <option value="M">M (1.56)</option>
+                    <option value="A119" selected>A119 (0.75)</option>
+                </select>
+                <br>
+
+                Safe residual pressure = 200 psi
+                <br>
+                Guage pressure
+                <input type="number">
+                <br>
+                <input type="reset">
+
+            </form>
+        </div>
+        <div class="col">
+            <a href="https://healthfully.com/calculate-oxygen-tank-duration-8526252.html">Reference</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
