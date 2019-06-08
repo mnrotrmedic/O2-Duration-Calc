@@ -15,6 +15,7 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col">
+            <h2>Oxygen Duration Guide</h2>
             <form>
                 Tank Type (Constant)
                 <select name="cylType" class="custom-select">
@@ -27,15 +28,25 @@
                     <option value="A119" selected>A119 (0.75)</option>
                 </select>
                 <br>
+                <span>Safe residual pressure = 200 psi</span>
 
-                Safe residual pressure = 200 psi
                 <br>
-                Gauge pressure
+                <p>
+                    Gauge pressure (psi)
+                </p>
+                <input type="number">
+                <br>
+                <p>
+                    Flow Rate (L/min)
+                </p>
                 <input type="number">
                 <br>
                 <input type="reset">
-
             </form>
+
+            <h3>Formula</h3>
+            <p>((<span id="gaugePSI">Gauge Pressure</span> - 200) x <span id="constant">constant</span>) /
+                <span id="flow">flow rate</span> = <span id="duration">duration</span> (minutes)</p>
         </div>
         <div class="col-2">
             <a href="https://healthfully.com/calculate-oxygen-tank-duration-8526252.html">Reference</a>
