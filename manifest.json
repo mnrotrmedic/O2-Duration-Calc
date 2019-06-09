@@ -4,7 +4,7 @@
     "name": "Transport Oxygen Duration Reference",
     "scope": "/O2-Duration-Calc/",
     "display": "minimal-ui",
-    "start_url": "https://mnrotrmedic.github.io/O2-Duration-Calc/",
+    "start_url": "index.html",
     "short_name": "O2 Calc",
     "theme_color": "transparent",
     "description": "Simple application to determine the duration of on-board oxygen based on tank pressure and flow rate. The formula is provided, please confirm all calculations. ",
