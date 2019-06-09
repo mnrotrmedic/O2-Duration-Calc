@@ -3,6 +3,7 @@
 const CACHE = "pwabuilder-precache";
 const precacheFiles = [
     "index.html",
+    "manifest.json",
     "Assets/Images/O2_44.png",
     "Assets/Images/O2_76.png",
     "Assets/Images/O2_152.png",
