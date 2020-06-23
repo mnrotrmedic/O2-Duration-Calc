@@ -43,12 +43,13 @@
             Tank Type (Constant)
             <select class="custom-select" id="cylinderConstant">
                 <option value="0.16">D (0.16)</option>
-                <option value="0.28">E (0.28)</option>
-                <option value="2.41">G (2.41)</option>
-                <option value="3.14">H (3.14)</option>
-                <option value="3.14">K (3.14)</option>
-                <option value="1.56">M (1.56)</option>
+                <!-- <option value="0.28">E (0.28)</option> -->
+                <!-- <option value="2.41">G (2.41)</option> -->
+                <!-- <option value="3.14">H (3.14)</option> -->
+                <!-- <option value="3.14">K (3.14)</option> -->
+                <!-- <option value="1.56">M (1.56)</option> -->
                 <option value="0.75" selected>A119 (0.75)</option>
+                <option value="1.9">PC-12 (1.9)</option>
             </select>
 
             <br>
@@ -83,10 +84,10 @@
         </div>
     </div>
 
-    <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a
+    <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a
             href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
             href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0
-            BY</a></div>
+            BY</a></div> -->
 
     <!-- https://www.w3schools.com/js/js_validation_api.asp -->
 
@@ -100,17 +101,17 @@
         calculate = () => { //function run after user enters relevent info in form
 
             cylinderConstant = parseFloat(document.getElementById("cylinderConstant").value); //cylinder constant based on size selected by user
-            currentPSI = document.getElementById("gaugePressure").value; //remaining PSI entered by user
-            rate = document.getElementById("flowRate").value; //flow rate (use) entered by user
+            currentPSI = parseInt(document.getElementById("gaugePressure").value); //remaining PSI entered by user
+            rate = parseInt(document.getElementById("flowRate").value); //flow rate (use) entered by user
 
-            document.getElementById("constant").innerHTML = cylinderConstant; //write formula volues at bottom of the page
-            document.getElementById("gaugePSI").innerHTML = currentPSI; //write formula volues at bottom of the page
-            document.getElementById("flow").innerHTML = rate; //write formula volues at bottom of the page
+            document.getElementById("constant").innerHTML = cylinderConstant; //write formula values at bottom of the page
+            document.getElementById("gaugePSI").innerHTML = (currentPSI - 200); //write formula values at bottom of the page
+            document.getElementById("flow").innerHTML = rate; //write formula values at bottom of the page
 
-            var timeLeft = Math.floor(((currentPSI * cylinderConstant - 200) / rate)); //the math happens here
+            var timeLeft = Math.floor(((currentPSI - 200) * cylinderConstant) / rate); //the math happens here
 
             document.getElementById("duration").innerHTML = (timeLeft + " minutes") //write duration in formula
-            document.getElementById("durationBanner").innerHTML = (timeLeft + " minutes") //write duration in otherwise empy H1 div
+            document.getElementById("durationBanner").innerHTML = (timeLeft + " minutes") //write duration in otherwise empty H1 div
         }
 
     </script>
