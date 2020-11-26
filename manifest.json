@@ -2,46 +2,40 @@
     "dir": "ltr",
     "lang": "en",
     "name": "Transport Oxygen Duration Reference",
-    "scope": "/O2-Duration-Calc/",
-    "display": "minimal-ui",
-    "start_url": "index.html",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "/index.html",
     "short_name": "O2 Calc",
-    "theme_color": "transparent",
+    "theme_color": "#FFE1C4",
     "description": "Simple application to determine the duration of on-board oxygen based on tank pressure and flow rate. The formula is provided, please confirm all calculations. ",
-    "orientation": "portrait",
-    "background_color": "transparent",
-    "related_applications": "",
-    "prefer_related_applications": "false",
+    "orientation": "portrait-primary",
+    "background_color": "#FFE9D2",
+    "prefer_related_applications": false,
     "generated": "true",
     "icons": [
         {
-            "src": "assets/images/O2_44.png",
+            "src": "/assets/images/O2_44.png",
             "sizes": "44x44",
             "type": "image/png"
         },
         {
-            "src": "assets/images/O2_76.png",
+            "src": "/assets/images/O2_76.png",
             "sizes": "76x76",
             "type": "image/png"
         },
         {
-            "src": "assets/images/O2_152.png",
+            "src": "/assets/images/O2_152.png",
             "sizes": "152x152",
             "type": "image/png"
         },
         {
-            "src": "assets/images/O2_512.png",
+            "src": "/assets/images/O2_512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "assets/images/O2_1024.png",
+            "src": "/assets/images/O2_1024.png",
             "sizes": "1024x1024",
-            "type": "image/png"
-        },
-        {
-            "src": "assets/images/O2_1240_600.png",
-            "sizes": "1240X600",
             "type": "image/png"
         }
     ]

@@ -7,9 +7,9 @@ calculate = () => { //function run after user enters relevent info in form
     currentPSI = parseInt(document.getElementById("gaugePressure").value); //remaining PSI entered by user
     rate = parseInt(document.getElementById("flowRate").value); //flow rate (use) entered by user 
 
-    console.log("Cylinder Constant: ", cylinderConstant)
-    console.log("Current PSI : ", currentPSI);
-    console.log("Rate : ", rate);
+    // console.log("Cylinder Constant: ", cylinderConstant)
+    // console.log("Current PSI : ", currentPSI);
+    // console.log("Rate : ", rate);
 
     document.getElementById("constant").innerHTML = cylinderConstant; //write formula values at bottom of the page
     document.getElementById("gaugePSI").innerHTML = currentPSI; //write formula values at bottom of the page
