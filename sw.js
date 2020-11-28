@@ -3,26 +3,22 @@ const assets = [
     '/',
     '/index.html',
     '/Assets/css/styles.css',
-    '/Assets/Images/O2_44.png',
-    '/Assets/Images/O2_76.png',
-    '/Assets/Images/O2_152.png',
-    '/Assets/Images/O2_512.png',
-    '/Assets/Images/O2_1024.png',
-    '/Assets/Images/oxygen-tank.svg',
     '/Assets/js/app.js',
-    '/Assets/js/ui.js',
-
-
+    '/Assets/js/ui.js'
 ]
 
 //install service worker
 self.addEventListener('install', evt => {
     // console.log('Service worker install event: ', evt);
     //cache core assets with changes
-    caches.open(staticCacheName)
-        .then(cache => {
-            cache.addAll(assets)
-        })
+    evt.waitUntil( //this holds completion of the install event until the cache is created and stored.
+        caches.open(staticCacheName) //this creates the cache (by name)
+            .then(cache => {
+                //console.log('caching shell assets');
+                cache.addAll(assets); //cache the array of assets in variable above
+            })
+    )
+
 })
 
 //activate service worker
