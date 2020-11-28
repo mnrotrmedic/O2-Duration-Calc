@@ -14,27 +14,27 @@
     "generated": "true",
     "icons": [
         {
-            "src": "/assets/images/O2_44.png",
+            "src": "assets/images/O2_44.png",
             "sizes": "44x44",
             "type": "image/png"
         },
         {
-            "src": "./assets.images/O2_76.png",
+            "src": "assets.images/O2_76.png",
             "sizes": "76x76",
             "type": "image/png"
         },
         {
-            "src": "/assets/images/O2_152.png",
+            "src": "assets/images/O2_152.png",
             "sizes": "152x152",
             "type": "image/png"
         },
         {
-            "src": "/assets/images/O2_512.png",
+            "src": "assets/images/O2_512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "/assets/images/O2_1024.png",
+            "src": "assets/images/O2_1024.png",
             "sizes": "1024x1024",
             "type": "image/png"
         }
