@@ -1,42 +1,41 @@
 {
-    "dir": "ltr",
-    "lang": "en",
-    "name": "Transport Oxygen Duration Reference",
-    "scope": ".",
-    "display": "standalone",
-    "start_url": "/O2-Duration-Calc/",
+    "name": "Oxygen Calculation",
     "short_name": "O2 Calc",
-    "theme_color": "#FFE1C4",
-    "description": "Simple application to determine the duration of on-board oxygen based on tank pressure and flow rate. The formula is provided, please confirm all calculations. ",
-    "orientation": "portrait-primary",
+    "start_url": "/index.html",
+    "display": "standalone",
     "background_color": "#FFE9D2",
-    "prefer_related_applications": false,
-    "generated": "true",
+    "theme_color": "#FFE1C4",
+    "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "assets/images/O2_44.png",
-            "sizes": "44x44",
-            "type": "image/png"
+            "src": "/Assets/Images/O2_44.png",
+            "type": "image/png",
+            "sizes": "44x44"
         },
         {
-            "src": "assets.images/O2_76.png",
-            "sizes": "76x76",
-            "type": "image/png"
+            "src": "/Assets/Images/O2_76.png",
+            "type": "image/png",
+            "sizes": "76x76"
         },
         {
-            "src": "assets/images/O2_152.png",
-            "sizes": "152x152",
-            "type": "image/png"
+            "src": "/Assets/Images/O2_152.png",
+            "type": "image/png",
+            "sizes": "152x152"
         },
         {
-            "src": "assets/images/O2_512.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/Assets/Images/O2_192.png",
+            "type": "image/png",
+            "sizes": "192x192"
         },
         {
-            "src": "assets/images/O2_1024.png",
-            "sizes": "1024x1024",
-            "type": "image/png"
+            "src": "/Assets/Images/O2_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/Assets/Images/O2_1024.png",
+            "type": "image/png",
+            "sizes": "1024x1024"
         }
     ]
 }

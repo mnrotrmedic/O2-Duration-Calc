@@ -17,7 +17,7 @@ const assets = [
 
 //install service worker
 self.addEventListener('install', evt => {
-    console.log('Service worker install event: ', evt);
+    // console.log('Service worker install event: ', evt);
     //cache core assets with changes
     caches.open(staticCacheName)
         .then(cache => {
@@ -27,11 +27,11 @@ self.addEventListener('install', evt => {
 
 //activate service worker
 self.addEventListener('activate', evt => {
-    console.log('Service worker activate event: ', evt);
+    // console.log('Service worker activate event: ', evt);
 })
 
 //fetch event handler
 self.addEventListener('fetch', evt => {
-    console.log('fetch event', evt);
+    // console.log('fetch event', evt);
 
 })
