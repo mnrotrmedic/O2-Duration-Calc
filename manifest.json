@@ -19,7 +19,7 @@
             "type": "image/png"
         },
         {
-            "src": "/assets/images/O2_76.png",
+            "src": "./assets.images/O2_76.png",
             "sizes": "76x76",
             "type": "image/png"
         },
