@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transport Oxygen Duration Reference</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="Assets/css/style.css">
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#FFE1C4">
@@ -13,47 +15,104 @@
 
 <body>
 
+
     <div class="row">
         <div class="col-2"></div>
         <div class="col">
             <h1 style="text-align: center">Oxygen Duration Reference</h1>
-            <!-- <form> -->
-            Tank Type (Constant)
-            <select class="custom-select" id="cylinderConstant">
-                <option value="0.16">D (0.16)</option>
-                <!-- <option value="0.28">E (0.28)</option> -->
-                <!-- <option value="2.41">G (2.41)</option> -->
-                <!-- <option value="3.14">H (3.14)</option> -->
-                <!-- <option value="3.14">K (3.14)</option> -->
-                <!-- <option value="1.56">M (1.56)</option> -->
-                <option value="0.75" selected>A119 (0.75)</option>
-                <option value="1.9">PC-12 (1.9)</option>
-            </select>
+            <form>
+                <label for="cylinderConstant" class="form__label">Tank Type (Constant)</label>
+                <select class="custom-select" id="cylinderConstant">
+                    <option value="0.16">D (0.16)</option>
+                    <!-- <option value="0.28">E (0.28)</option> -->
+                    <!-- <option value="2.41">G (2.41)</option> -->
+                    <!-- <option value="3.14">H (3.14)</option> -->
+                    <!-- <option value="3.14">K (3.14)</option> -->
+                    <!-- <option value="1.56">M (1.56)</option> -->
+                    <option value="0.75" selected>A119 (0.75)</option>
+                    <option value="1.9">PC-12 (1.9)</option>
+                </select>
 
-            <br>
+                <br>
 
-            <p>
-                Gauge pressure (psi): <input id="gaugePressure" type="number" min=0 required>
+                <label for="gaugePressure" class="form__label">Gauge pressure (psi):</label>
+                <input id="gaugePressure" type="number" min=0 required>
                 <br><span>Safe residual pressure = 200 psi</span>
-            </p>
 
-            <br>
+                <br>
 
-            <p>
-                Flow Rate (L/min): <input id="flowRate" type="number" min=0 required>
-            </p>
+                <label for="flowRate" class="form__label">Flow Rate (L/min):</label>
+                <input id="flowRate" type="number" min=0 required>
 
-            <br>
+                <br>
 
-            <button type="submit" onclick="calculate()">Calculate</button>
+            </form>
+
+            <button type="submit" onclick="calculateDuration()">Calculate Oxygen Duration</button>
 
             <h1 style="text-align: center" id="durationBanner"></h1>
+
+            <h3>Formula</h3>
+
+            <p>
+                ((<span id="gaugePSI">Gauge Pressure</span> - 200) x <span id="constant">Constant</span>) /
+                <span id="flow">Flow Rate</span> = <span id="duration">Duration (in minutes)</span>
+            </p>
+        </div>
+
+        <div class="col-2">
+            <!-- <a href="https://healthfully.com/calculate-oxygen-tank-duration-8526252.html">Reference</a> -->
+        </div>
+    </div>
+
+    <!-- Beer math for calculation based on flow rate -->
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col">
+            <h1 style="text-align: center">Hamilton T-1 Oxygen Consumption Calculation</h1>
+            <!-- <form> -->
+
+            <form class="form">
+
+                <label for="minuteVolume" class="form__label">Patient Expired Minute Volume
+                    <br>
+                    <span id="toolTip">Minute Volume = Respiratory Rate x Tidal Volume</span></label>
+                <input type="number" id="minuteVolume" name="minuteVolume" min="0" required>
+
+                <br>
+
+                <!-- Values here are numeric base flow rates as provided by Hamilton they are numeric
+                to ensure they can be passed directly into the formula in ui.js-->
+                <label for="ptGroup" class="form__label">Patient Group</label>
+                <select id="ptGroup">
+                    <option value="3">Adult / Pediatric</option>
+                    <option value="4">neonatal</option>
+                </select>
+
+                <br>
+
+                <label for="MVLeak" class="form__label">MV Leak</label>
+                <input type="number" id="MVLeak" name="MVLeak" value=0>
+
+                <br>
+
+                <label for="FiO2" class="form__label">FiO2</label>
+                <input type="number" id="FiO2" name="FiO2" min="21" required>
+
+                <br>
+
+            </form>
+
+            <button type="submit" onclick="calculateConsumption()">Calculate Oxygen Consumption</button>
+
+            <h1 style="text-align: center" id="o2Consumption"></h1>
 
 
             <h3>Formula</h3>
             <p>
-                ((<span id="gaugePSI">Gauge Pressure</span> - 200) x <span id="constant">Constant</span>) /
-                <span id="flow">Flow Rate</span> = <span id="duration">Duration (in minutes)</span>
+                ((<span id="expMinVol">Minute Volume</span> + Base Flow + MVleak) x <span id="FiO2">Oxygen
+                    FiO<sub>2</sub></span> - 20.9) /
+                79.1 = <span id="lmin">l/min Oxygen Flow</span>
             </p>
         </div>
 
@@ -71,6 +130,8 @@
 
     <script src="./Assets/js/ui.js"></script>
     <script src="./Assets/js/app.js"></script>
+
+
 
 </body>
 

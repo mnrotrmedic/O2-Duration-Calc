@@ -1,7 +1,12 @@
+// Variables for the calculateDuration function
 var cylinderConstant, currentPSI, rate //declare variables that get form inputs
 
+// Variables for Consumption Calculation function
+const t1AdultBaseFLow = 3;
+const t1NeonatalBaseFLow = 4;
 
-calculate = () => { //function run after user enters relevent info in form
+
+calculateDuration = () => { //function run after user enters relevent info in form
 
     cylinderConstant = parseFloat(document.getElementById("cylinderConstant").value); //cylinder constant based on size selected by user
     currentPSI = parseInt(document.getElementById("gaugePressure").value); //remaining PSI entered by user
@@ -19,4 +24,22 @@ calculate = () => { //function run after user enters relevent info in form
 
     document.getElementById("duration").innerHTML = (timeLeft + " minutes") //write duration in formula
     document.getElementById("durationBanner").innerHTML = (timeLeft + " minutes") //write duration in otherwise empty H1 div
+}
+
+calculateConsumption = () => {
+    console.log('consumption button clicked');
+
+    const minuteVolume = parseFloat(document.getElementById("minuteVolume").value); //minute volume entered from user input
+    const ptGroup = parseInt(document.getElementById("ptGroup").value); //patient group as selected in dropdown
+    const MVLeak = parseInt(document.getElementById("MVLeak").value); //leak value entered in form. Has default value of zero
+    const FiO2 = parseInt(document.getElementById("FiO2").value); //Oxygen percentage value entered in form.
+
+    // console.log('minuteVolume: ' + minuteVolume);
+    // console.log('Patient Age Group: ' + ptGroup);
+    // console.log('Minute Volume Leak: ' + MVLeak);
+    // console.log('FiO2: ' + FiO2);
+
+    let consumption = ((minuteVolume + ptGroup + MVLeak) * ((FiO2 - 20.9) / 79.1))
+
+    console.log('Consumption: ' + consumption + ' l/min')
 }
