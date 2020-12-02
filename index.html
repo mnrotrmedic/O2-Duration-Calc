@@ -79,32 +79,45 @@
 
         <form class="form">
 
-            <label for="minuteVolume" class="form__label tooltip">Patient Expired Minute Volume
-                <br>
-                <div class="tooltiptext">Minute Volume = Respiratory Rate x Tidal Volume</div>
+            <label for="minuteVolume" class="form__label tooltip">Minute Volume in Liters
+                (Minute Volume = Respiratory Rate x Tidal Volume)
             </label>
+            <br>
             <input type="number" id="minuteVolume" name="minuteVolume" min="0" class="form__input" required>
 
+            <br>
             <br>
 
             <!-- Values here are numeric base flow rates as provided by Hamilton they are numeric
                 to ensure they can be passed directly into the formula in ui.js-->
             <label for="ptGroup" class="form__label">Patient Group</label>
+
+            <br>
+
             <select id="ptGroup">
                 <option value="3">Adult / Pediatric</option>
                 <option value="4">neonatal</option>
             </select>
 
             <br>
+            <br>
 
             <label for="MVLeak" class="form__label">MV Leak</label>
-            <input type="number" id="MVLeak" name="MVLeak" value=0 class="form__input">
 
             <br>
 
+            <input type="number" id="MVLeak" name="MVLeak" value=0 class="form__input">
+
+            <br>
+            <br>
+
             <label for="FiO2" class="form__label">FiO2</label>
+
+            <br>
+
             <input type="number" id="FiO2" name="FiO2" min="21" max="100" class="form__input" required>
 
+            <br>
             <br>
 
         </form>
@@ -115,13 +128,13 @@
         <h3 style="text-align:center" id="o2Consumption"></h3>
 
 
-        <h3>Formula</h3>
+        <!-- <h3>Formula</h3>
 
         <p>
             ((<span id="expMinVol">Minute Volume</span> + Base Flow + MVleak) x <span id="FiO2">Oxygen
                 FiO<sub>2</sub></span> - 20.9) /
             79.1 = <span id="lmin">l/min Oxygen Flow</span>
-        </p>
+        </p> -->
     </div>
 
     <div class="portfolioContainer boxThree tabcontent" id="beerMath">
