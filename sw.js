@@ -3,6 +3,7 @@ const assets = [
     '/',
     '/index.html',
     '/Assets/css/styles.css',
+    '/Assets/css/normalize.css',
     '/Assets/js/app.js',
     '/Assets/js/ui.js'
 ]

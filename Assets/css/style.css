@@ -1,59 +1,73 @@
-.jumbotron {
-    background-color: #122d80;
-    color: #57a4ff
+.tablink {
+    width: 33%;
+    float: left;
+    background-color: #347536;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-body {
-    padding: 25px
+.tablink:hover {
+    background-color: #4caf50;
+}
+
+.submitButton {
+    display: block;
+    width: 25%;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+    background-color:  #347536;
+    border: none;
+    color: white;
+}
+
+form {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 .form__label {
     font-weight: 600;
-    padding: 10px 0;
-}
-
-.text {
-    /* background-color: #122d80; */
-    color: #57a4ff
-}
-
-body {
-    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
-}
-
-p {
-    text-indent: 3%;
-}
-
-.tablink {
-    background-color: #122d80;
-    color: #57a4ff;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 33%;
-}
-
-.tablink:hover {
-    background-color: #777;
-}
-
-.tabcontent {
-    color: white;
-    display: none;
-    padding: 100px 20px;
-    height: 100%;
-}
-
-.portfolioImage {
-    max-width: 300px;
-    width: 100%
+    padding: 15px 0;
 }
 
 .portfolioContainer {
-    width: 33%;
-    float: left
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+
+input {
+    width: 55px;
+    margin: 5px;
 }
